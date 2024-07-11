@@ -22,30 +22,33 @@ function TemperatureDetails({
     feels_like,
     timezone,
   },
+  detailsbg,
 }) {
   return (
     <div>
-      <div className="flex items-center justify-center text-xl text-cyan-300 py-6">
+      <div
+        className={`flex items-center justify-center md:text-xl text-xs py-3 ${detailsbg}`}
+      >
         <p>{details}</p>
       </div>
 
-      <div className="flex flex-row items-center justify-between text-white py-3">
-        <img src={iconUrlFromCode(icon)} alt="" className="w-20" />
-        <p className="text-5xl">{`${temp.toFixed()}°`}</p>
+      <div className="flex flex-row items-center justify-around text-white py-3">
+        <img src={iconUrlFromCode(icon)} alt="" className="md:w-20 w-14" />
+        <p className="md:text-5xl text-4xl">{`${temp.toFixed()}°`}</p>
         <div className="flex flex-col space-y-2">
-          <div className="flex font-light text-sm items-center justify-center">
+          <div className="flex font-light md:text-sm text-xs items-center justify-center">
             <UilTemperature size={18} className="mr-1" />
             Real Feel:
             <span className="font-medium ml-1">{`${feels_like.toFixed()}°`}</span>
           </div>
 
-          <div className="flex font-light text-sm items-center justify-center">
+          <div className="flex font-light md:text-sm text-xs items-center justify-center">
             <UilTear size={18} className="mr-1" />
             Humidity:
             <span className="font-medium ml-1">{`${humidity.toFixed()}%`}</span>
           </div>
 
-          <div className="flex font-light text-sm items-center justify-center">
+          <div className="flex font-light md:text-sm text-xs items-center justify-center">
             <UilWind size={18} className="mr-1" />
             Wind:
             <span className="font-medium ml-1">{`${speed.toFixed()} km/h`}</span>
@@ -53,7 +56,7 @@ function TemperatureDetails({
         </div>
       </div>
 
-      <div className="flex flex-row items-center justify-center space-x-2 text-white text-sm py-3">
+      <div className="flex flex-row items-center justify-center space-x-2 text-white md:text-sm text-xs py-3">
         <UilSun />
         <p className="font-light">
           Rise:{" "}

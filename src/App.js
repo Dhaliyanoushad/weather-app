@@ -1,4 +1,3 @@
-import "./App.css";
 import Inputs from "./components/Inputs";
 import TimeAndLocation from "./components/TimeAndLocation";
 import TemperatureDetails from "./components/TemperatureDetails";
@@ -38,16 +37,24 @@ function App() {
     return "bg-orange-500";
   };
 
+  const formatDetails = () => {
+    if (!weather) return "text-cyan-300";
+    const threshold = units === "metric" ? 20 : 60;
+    if (weather.temp <= threshold) return "text-cyan-300";
+
+    return "text-yellow-300";
+  };
+
   return (
     <div
-      className={`mx-auto max-w-screen-md mt-4 py-5 px-32 bg-gradient-to-br  h-fit shadow-xl shadow-gray-400 ${formatBackground()}`}
+      className={`mx-auto max-w-screen-md self-center md:my-4 md:h-fit h-screen my-auto py-5 md:px-32 px-14 bg-gradient-to-br shadow-xl shadow-gray-400 ${formatBackground()}`}
     >
       <Heading bg={formatHeadingBackground()} />
       <Inputs setQuery={setQuery} units={units} setUnits={setUnits} />
       {weather && (
         <div>
           <TimeAndLocation weather={weather} />
-          <TemperatureDetails weather={weather} />
+          <TemperatureDetails weather={weather} detailsbg={formatDetails()} />
           <Forecast title="daily" items={weather.daily} />
         </div>
       )}
