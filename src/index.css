@@ -9,6 +9,8 @@
     font-family: "Poppins", sans-serif;
   }
   body {
-    background-color: black;
+    background: url("whee.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }
