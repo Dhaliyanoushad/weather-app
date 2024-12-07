@@ -25,7 +25,7 @@ The app is live! Check it out here: [WeatherApp on Netlify](https://responsivee-
 1. Clone the repository:
     ```bash
     git clone https://github.com/Dhaliyanoushad/weather-app
-    cd weatherapp
+    cd weather-app
     ```
 
 2. Install dependencies:
